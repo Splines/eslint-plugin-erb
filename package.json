@@ -9,7 +9,8 @@
   "files": [
     "index.js",
     "lib/index.js",
-    "lib/processor.js"
+    "lib/processor.js",
+    "lib/file_coordinates.js"
   ],
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.3.3",
