@@ -1,7 +1,7 @@
 # eslint-plugin-erb
 
 **Lint your JavaScript code inside ERB files (`.js.erb`).**
-A zero dependency plugin for [ESLint](https://eslint.org/).
+A zero-dependency plugin for [ESLint](https://eslint.org/).
 
 ![showcase-erb-lint-small](https://github.com/Splines/eslint-plugin-erb/assets/37160523/e0c32a98-1520-4fb4-a907-f19cb0819da2)
 
