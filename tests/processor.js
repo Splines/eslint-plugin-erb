@@ -24,7 +24,13 @@ describe("preprocess", () => {
     assert.equal(res, "Hello, world!");
   });
 
-  const replaceStringFiles = ["one-liner", "common", "each-do", "multi-line"];
+  const replaceStringFiles = [
+    "one-liner",
+    "common",
+    "each-do",
+    "multi-line",
+    "multiple-erb-in-one-line",
+  ];
   replaceStringFiles.forEach((name) => {
     it(`replaces ruby with dummy string in "${name}.js"`, () => {
       const text = fs.readFileSync(`tests/fixtures/${name}.js`, "utf-8");
@@ -105,6 +111,25 @@ describe("preprocess", () => {
           [41, { lineOffset: 0, columnOffset: -17 }],
           [96, { lineOffset: 0, columnOffset: -33 }],
           [154, { lineOffset: 0, columnOffset: -32 }],
+        ]),
+      },
+    },
+    {
+      // This tests that column offsets are correctly calculated for multiple
+      // ERB tags on the same line.
+      name: "multiple-erb-in-one-line",
+      expected: {
+        lineOffsetLookup: new Map([
+          [1, new Map([
+            [61, { lineOffset: 0, columnOffset: -17 }],
+            [126, { lineOffset: 0, columnOffset: -45 }],
+            [188, { lineOffset: 0, columnOffset: -77 }],
+          ])],
+        ]),
+        offsetLookup: new Map([
+          [61, { lineOffset: 0, columnOffset: -17 }],
+          [126, { lineOffset: 0, columnOffset: -45 }],
+          [188, { lineOffset: 0, columnOffset: -77 }],
         ]),
       },
     },
