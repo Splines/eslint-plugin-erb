@@ -1,0 +1,37 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+
+jobs:
+  mocha:
+    name: Mocha
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        eslint: [6, 7, 8]
+        node: [16, 17, 18, 19, 20, 21]
+        include:
+          - os: windows-latest
+            eslint: 7
+            node: 16
+          - os: macOS-latest
+            eslint: 7
+            node: 16
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install dependencies
+        run: npm install
+        env:
+          CI: true
+      - name: Run Mocha tests
+        run: npm test
