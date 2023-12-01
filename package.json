@@ -14,13 +14,19 @@
   "keywords": [
     "eslint",
     "eslintplugin",
+    "eslint-processor",
     "erb",
     "ruby",
+    "embedded ruby",
     "javascript",
     "lint",
     "linter"
   ],
   "main": "index.js",
+  "files": [
+    "index.js",
+    "lib"
+  ],
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.3.3",
     "chai": "^4.3.10",
@@ -28,6 +34,8 @@
     "mocha": "^10.2.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "bump-version": "npm run test && npm version --no-git-tag-version",
+    "publish-final": "npm run test && npm publish"
   }
 }
