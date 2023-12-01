@@ -13,7 +13,7 @@ npm test
 For reproduction, this is the ESLint configuration file used to generate the input messages for testing (see the `tests/fixtures/` folder. The files were manually renamed to end with `.js.erb` during this process.
 
 ```js
-//.eslintrc.js
+// .eslintrc.js
 // Starting with v9, this config will be deprecated in favor of the new
 // configuration files [1]. @stylistic is already ready for the new "flat config",
 // when it's time, copy the new config from [2].
@@ -42,19 +42,14 @@ module.exports = {
     "jquery": true,
     "es6": true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@stylistic/all-extends"
-  ],
   "plugins": [
     "@stylistic",
     "erb"
   ],
-  "overrides": [
-    {
-      "files": ["*.js.erb"],
-      "processor": "erb/erbProcessor"
-    }
+  "extends": [
+    "eslint:recommended",
+    "plugin:@stylistic/all-extends",
+    "plugin:erb/recommended"
   ],
   "rules": {
     "no-unused-vars": "warn",
