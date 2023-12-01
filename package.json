@@ -35,6 +35,7 @@
   },
   "scripts": {
     "test": "mocha",
+    "whats-included": "npm pack --dry-run",
     "bump-version": "npm run test && npm version --no-git-tag-version",
     "publish-final": "npm run test && npm publish"
   }
