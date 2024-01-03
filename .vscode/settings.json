@@ -5,7 +5,7 @@
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": "explicit"
     },
     // this disables VSCode built-int formatter (instead we want to use ESLint)
     "javascript.validate.enable": false
