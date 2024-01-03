@@ -1,13 +1,16 @@
 {
   "name": "eslint-plugin-erb",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "An ESLint plugin to lint JavaScript in ERB files (.js.erb)",
   "license": "MIT",
   "author": {
     "name": "Splines",
     "url": "https://github.com/splines"
   },
-  "repository": "Splines/eslint-plugin-erb",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Splines/eslint-plugin-erb.git"
+  },
   "bugs": {
     "url": "https://github.com/Splines/eslint-plugin-erb/issues"
   },
