@@ -3,7 +3,7 @@
 **Lint your JavaScript code inside ERB files (`.js.erb`).**
 A zero-dependency plugin for [ESLint](https://eslint.org/).
 
-![showcase-erb-lint-gif](https://github.com/Splines/eslint-plugin-erb/assets/37160523/623d6007-b4f5-41ce-be76-5bc0208ed636)
+![showcase-erb-lint-gif](https://github.com/Splines/eslint-plugin-erb/assets/37160523/623d6007-b4f5-41ce-be76-5bc0208ed636?raw=true)
 
 
 ## Usage
