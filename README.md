@@ -3,7 +3,7 @@
 **Lint your JavaScript code inside ERB files (`.js.erb`).**
 A zero-dependency plugin for [ESLint](https://eslint.org/).
 
-![showcase-erb-lint-small](https://github-production-user-asset-6210df.s3.amazonaws.com/37160523/284030097-f6b7e22a-2a6e-4198-845e-68f903966d1b.gif)
+![showcase-erb-lint-small](https://private-user-images.githubusercontent.com/37160523/293898881-842886b7-d532-4ea2-a59c-0a3e0b11c7d1.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDQyODExMDUsIm5iZiI6MTcwNDI4MDgwNSwicGF0aCI6Ii8zNzE2MDUyMy8yOTM4OTg4ODEtODQyODg2YjctZDUzMi00ZWEyLWE1OWMtMGEzZTBiMTFjN2QxLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAxMDMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMTAzVDExMjAwNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTI0M2Q1MDk5YjExNTZjYzkzNjM1NDk1OTVkNWEyZDMwZTU3YTBjNjc2NjU5Y2JlNDQ1ODI5ZmIwNDNlNzE0NDcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.FyYXW1kUm7ZHSfheLxfzuZS-89ue0nkMyHR0hFtP0JE)
 
 
 ## Usage
