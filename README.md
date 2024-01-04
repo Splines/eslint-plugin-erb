@@ -62,13 +62,23 @@ const customGlobals = {
   MyGlobalVariableOrFunctionOrClassOrWhatever: "readable",
 };
 
+// [1] https://eslint.org/docs/latest/use/configure/configuration-files-new#globally-ignoring-files-with-ignores
+
 export default [
   js.configs.recommended,
   erb.configs.recommended,
+  // Globally ignoring the following files
+  // "Note that only global ignores patterns can match directories.
+  // 'ignores' patterns that are specific to a configuration will
+  // only match file names." ~ see [1]
   {
     ignores: [
       "node_modules/",
+      "tests/fixtures/",
+      "tmp/",
     ],
+  },
+  {
     plugins: {
       "@stylistic": stylistic,
     },
