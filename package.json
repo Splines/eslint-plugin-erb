@@ -34,9 +34,12 @@
     "@stylistic/eslint-plugin": "^1.3.3",
     "chai": "^4.3.10",
     "eslint": "^9.0.0-alpha.0",
+    "globals": "^13.24.0",
     "mocha": "^10.2.0"
   },
   "scripts": {
+    "lint": "eslint lib/",
+    "lint-fix": "eslint --fix lib/",
     "test": "mocha",
     "whats-included": "npm pack --dry-run",
     "bump-version": "npm run test && npm version --no-git-tag-version",
