@@ -22,7 +22,7 @@ npm install --save-dev eslint eslint-plugin-erb
 
 ### Configure
 
-Starting of v9 ESLint provides a [new flat config format](https://eslint.org/docs/latest/use/configure/configuration-files-new) (`eslint.config.js`). Also see the [configuration migration guide](https://eslint.org/docs/latest/use/configure/migration-guide#configuring-language-options). Use it as follows and it will automatically lint all your `.js.erb` files:
+Starting of v9 ESLint provides a [new flat config format](https://eslint.org/docs/latest/use/configure/configuration-files-new) (`eslint.config.js`). Also see the [configuration migration guide](https://eslint.org/docs/latest/use/configure/migration-guide). Use it as follows and it will automatically lint all your `.js.erb` files:
 
 ```js
 // eslint.config.js
