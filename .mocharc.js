@@ -1,6 +1,6 @@
 module.exports = {
-    "spec": "tests/**/*.js",
-    "ignore": [
-        "tests/fixtures/**"
-    ],
-}
+  spec: "tests/**/*.js",
+  ignore: [
+    "tests/fixtures/**",
+  ],
+};

@@ -7,7 +7,7 @@ const cache = require("../lib/cache.js");
 
 describe("postprocess", () => {
   it("deletes file from cache after postprocessing", () => {
-    const text = `console.log("Hello world!");`;
+    const text = 'console.log("Hello world!");';
     const name = "testfile.js";
 
     pre(text, name);
