@@ -38,8 +38,8 @@
     "mocha": "^10.2.0"
   },
   "scripts": {
-    "lint": "eslint lib/",
-    "lint-fix": "eslint --fix lib/",
+    "lint": "eslint .",
+    "lint-fix": "eslint --fix .",
     "test": "mocha",
     "whats-included": "npm pack --dry-run",
     "bump-version": "npm run test && npm version --no-git-tag-version",

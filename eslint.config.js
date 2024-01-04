@@ -15,7 +15,11 @@ module.exports = [
   {
     ignores: [
       "node_modules/",
+      "tests/fixtures/",
+      "tmp/",
     ],
+  },
+  {
     plugins: {
       "@stylistic": stylistic,
     },
