@@ -187,7 +187,7 @@ If you're using VSCode, you may find this `settings.json` options useful:
         "editor.defaultFormatter": "dbaeumer.vscode-eslint" // use ESLint plugin
     },
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true // Auto-fix ESLint errors on save
+        "source.fixAll.eslint": "explicit" // Auto-fix ESLint errors on save
     },
     // this disables VSCode built-int formatter (instead we want to use ESLint)
     "javascript.validate.enable": false,

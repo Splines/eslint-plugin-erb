@@ -9,5 +9,5 @@
         "source.fixAll.eslint": "explicit"
     },
     // this disables VSCode built-int formatter (instead we want to use ESLint)
-    "javascript.validate.enable": false,
+    "javascript.validate.enable": false
 }
