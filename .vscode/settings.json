@@ -1,4 +1,7 @@
 {
+    //////////////////////////////////////
+    // JS (ESLint)
+    //////////////////////////////////////
     "eslint.format.enable": true,
     "eslint.experimental.useFlatConfig": true,
     "[javascript]": {
@@ -9,5 +12,11 @@
         "source.fixAll.eslint": "explicit"
     },
     // this disables VSCode built-int formatter (instead we want to use ESLint)
-    "javascript.validate.enable": false
+    "javascript.validate.enable": false,
+    //////////////////////////////////////
+    // Git
+    //////////////////////////////////////
+    "git.inputValidation": "warn",
+    "git.inputValidationSubjectLength": 50,
+    "git.inputValidationLength": 72
 }
