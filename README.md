@@ -6,8 +6,8 @@ A zero-dependency plugin for [ESLint](https://eslint.org/).
 ![showcase-erb-lint-gif](https://github.com/Splines/eslint-plugin-erb/assets/37160523/623d6007-b4f5-41ce-be76-5bc0208ed636?raw=true)
 
 
-> [!WARNING]
-> v2.0.0 is breaking. We now use the new ESLint flat config format. Use `erb:recommended-legacy` if you want to keep using the old `.eslintrc.js` format.
+> **Warning**
+> v2.0.0 is breaking. We use the new ESLint flat config format. Use `erb:recommended-legacy` if you want to keep using the old `.eslintrc.js` format.
 
 ## Usage
 
