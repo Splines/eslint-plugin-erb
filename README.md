@@ -6,8 +6,8 @@ A zero-dependency plugin for [ESLint](https://eslint.org/).
 ![showcase-erb-lint-gif](https://github.com/Splines/eslint-plugin-erb/assets/37160523/623d6007-b4f5-41ce-be76-5bc0208ed636?raw=true)
 
 
-> [!WARNING]
-> v2.0.0 is breaking. We now use the new ESLint flat config format. Use `erb:recommended-legacy` if you want to keep using the old `.eslintrc.js` format.
+> **Warning**
+> v2.0.0 is breaking. We use the new ESLint flat config format. Use `erb:recommended-legacy` if you want to keep using the old `.eslintrc.js` format.
 
 ## Usage
 
@@ -34,6 +34,15 @@ export default [
   // in your settings.json
   erb.configs.recommended,
   {
+    linterOptions: {
+      // The "unused disable directive" is set to "warn" by default.
+      // For the ERB plugin to work correctly, you must disable
+      // this directive to avoid issues described here
+      // https://github.com/eslint/eslint/discussions/18114
+      // If you're using the CLI, you might also use the following flag:
+      // --report-unused-disable-directives-severity=off
+      reportUnusedDisableDirectives: "off",
+    },
     // your other configuration options
   }
 ];
@@ -96,6 +105,15 @@ export default [
         ...globals.node,
       },
     },
+    linterOptions: {
+      // The "unused disable directive" is set to "warn" by default.
+      // For the ERB plugin to work correctly, you must disable
+      // this directive to avoid issues described here
+      // https://github.com/eslint/eslint/discussions/18114
+      // If you're using the CLI, you might also use the following flag:
+      // --report-unused-disable-directives-severity=off
+      reportUnusedDisableDirectives: "off",
+    },
   },
 ];
 ```
@@ -123,6 +141,15 @@ export default [
     processor: erb.processors.erbProcessor,
   },
   {
+    linterOptions: {
+      // The "unused disable directive" is set to "warn" by default.
+      // For the ERB plugin to work correctly, you must disable
+      // this directive to avoid issues described here
+      // https://github.com/eslint/eslint/discussions/18114
+      // If you're using the CLI, you might also use the following flag:
+      // --report-unused-disable-directives-severity=off
+      reportUnusedDisableDirectives: "off",
+    },
     // your other configuration options
   }
 ];
@@ -187,7 +214,7 @@ If you're using VSCode, you may find this `settings.json` options useful:
         "editor.defaultFormatter": "dbaeumer.vscode-eslint" // use ESLint plugin
     },
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true // Auto-fix ESLint errors on save
+        "source.fixAll.eslint": "explicit" // Auto-fix ESLint errors on save
     },
     // this disables VSCode built-int formatter (instead we want to use ESLint)
     "javascript.validate.enable": false,
