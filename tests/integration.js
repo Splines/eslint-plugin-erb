@@ -18,6 +18,7 @@ describe("Integration tests", () => {
     "multi-line",
     "multiple-erb-in-one-line",
     "one-liner",
+    "multiple-properties",
   ];
   mapFiles.forEach((name) => {
     it(`performs linting as we expect it on ${name}.js`, async () => {
