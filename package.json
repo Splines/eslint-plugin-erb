@@ -31,9 +31,11 @@
     "lib"
   ],
   "devDependencies": {
+    "@html-eslint/eslint-plugin": "^0.31.1",
+    "@html-eslint/parser": "^0.31.0",
     "@stylistic/eslint-plugin": "^1.3.3",
     "chai": "^4.3.10",
-    "eslint": "^9.0.0-alpha.0",
+    "eslint": "^9.17.0",
     "globals": "^13.24.0",
     "mocha": "^10.2.0"
   },

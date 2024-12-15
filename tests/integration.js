@@ -1,15 +1,10 @@
 const fs = require("fs");
 const assert = require("chai").assert;
-const plugin = require("../lib/index.js");
 const { ESLint } = require("eslint");
 
 const eslint = new ESLint({
   fix: true,
   overrideConfigFile: "./tests/eslint.test.config.js",
-  overrideConfig: {
-    processor: plugin.processors.processorJs,
-    files: ["**/*.js"],
-  },
 });
 
 async function runTest(filename, expectedFilename) {
@@ -31,6 +26,17 @@ describe("Integration tests (JS)", () => {
   mapFiles.forEach((name) => {
     it(`performs linting as we expect it on ${name}.js`, async () => {
       await runTest(`tests/fixtures/${name}.js`, `tests/fixtures/${name}.expected.js`, eslint);
+    });
+  });
+});
+
+describe("Integration tests (HTML)", () => {
+  const mapFiles = [
+    "multiple-attributes",
+  ];
+  mapFiles.forEach((name) => {
+    it(`performs linting as we expect it on ${name}.html`, async () => {
+      await runTest(`tests/fixtures/${name}.html`, `tests/fixtures/${name}.expected.html`, eslint);
     });
   });
 });
