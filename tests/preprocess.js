@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 const assert = require("chai").assert;
-const p = require("../lib/preprocess.js");
+const { preprocessJs: p } = require("../lib/preprocess.js");
 const cache = require("../lib/cache.js");
 
 describe("preprocess", () => {
