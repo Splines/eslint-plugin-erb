@@ -2,9 +2,9 @@
 
 **Lint your JavaScript code inside ERB files (`.js.erb`).**
 A zero-dependency plugin for [ESLint](https://eslint.org/).
+<br>Also lints your **HTML code** in `.html.erb` if you want to.
 
 ![showcase-erb-lint-gif](https://github.com/Splines/eslint-plugin-erb/assets/37160523/623d6007-b4f5-41ce-be76-5bc0208ed636?raw=true)
-
 
 > **Warning**
 > v2.0.0 is breaking. We use the new ESLint flat config format. Use `erb:recommended-legacy` if you want to keep using the old `.eslintrc.js` format.
@@ -19,10 +19,9 @@ Install the plugin alongside [ESLint](https://eslint.org/docs/latest/use/getting
 npm install --save-dev eslint eslint-plugin-erb
 ```
 
-
 ### Configure
 
-Starting of v9 ESLint provides a [new flat config format](https://eslint.org/docs/latest/use/configure/configuration-files-new) (`eslint.config.js`). Also see the [configuration migration guide](https://eslint.org/docs/latest/use/configure/migration-guide). Use it as follows and it will automatically lint all your `.js.erb` files:
+Starting of v9 ESLint provides a [new flat config format](https://eslint.org/docs/latest/use/configure/configuration-files-new) (`eslint.config.js`). Also see the [configuration migration guide](https://eslint.org/docs/latest/use/configure/migration-guide). Use it as follows and it will automatically lint all your **JavaScript code** in `.js.erb` files:
 
 ```js
 // eslint.config.js
@@ -46,7 +45,28 @@ export default [
     // your other configuration options
   }
 ];
+```
 
+If you also want to lint **HTML code** in `.html.erb` files, you can use our preprocessor in conjunction with the amazing [`html-eslint`](https://html-eslint.org/) plugin. Install it, then add the following section to your ESLint config `export default []` array:
+
+```js
+// eslint.config.js
+{
+  processor: erb.processors["processorHtml"],
+  ...html.configs["flat/recommended"],
+  files: ["**/*.html", "**/*.html.erb"],
+  rules: {
+      ...html.configs["flat/recommended"].rules,
+      "@html-eslint/indent": ["error", 2],
+      // other rules...
+  },
+}
+```
+
+Additionally, you might want to add the following option to the other objects (`{}`) in `export default []`, since other rules might be incompatible with HTML files:
+
+```js
+ignores: ["**/*.html**"],
 ```
 
 <details>
@@ -120,13 +140,11 @@ export default [
 
 </details>
 
-
 <details>
 
 <summary>Alternative way to configure the processor</summary>
 
 With this variant you have a bit more control over what is going on, e.g. you could name your files `.js.special-erb` and still lint them (if they contain JS and ERB syntax).
-
 
 ```js
 // eslint.config.js
@@ -157,10 +175,6 @@ export default [
 
 </details>
 
-
-
-
-
 <details>
 <summary>Legacy: you can still use the old `.eslintrc.js` format</summary>
 
@@ -190,15 +204,12 @@ module.exports = {
 
 </details>
 
-
-
-
-
 ## Editor Integrations
 
 The [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) for VSCode has built-in support for the ERB processor once you've configured it in your `.eslintrc.js` file as shown above.
 
 If you're using VSCode, you may find this `settings.json` options useful:
+
 ```jsonc
 {
     "editor.formatOnSave": false, // it still autosaves with the options below
@@ -230,8 +241,8 @@ If you're using VSCode, you may find this `settings.json` options useful:
 }
 ```
 
-
 ## Limitations
+
 - Does not account for code indentation inside `if/else` ERB statements, e.g.
 this snippet
 
@@ -240,7 +251,9 @@ this snippet
     console.log("You are lucky 🍀");
 <% end %>
 ```
+
 will be autofixed to
+
 ```js
 <% if you_feel_lucky %>
 console.log("You are lucky 🍀");
