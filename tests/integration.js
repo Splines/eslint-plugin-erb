@@ -33,6 +33,7 @@ describe("Integration tests (JS)", () => {
 describe("Integration tests (HTML)", () => {
   const mapFiles = [
     "multiple-attributes",
+    "if-else",
   ];
   mapFiles.forEach((name) => {
     it(`performs linting as we expect it on ${name}.html`, async () => {
