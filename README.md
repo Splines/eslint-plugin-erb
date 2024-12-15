@@ -197,7 +197,7 @@ export default [
 ];
 ```
 
-Additionally, you might want to add the following option to the other objects (`{}`) in `export default []`, since other rules might be incompatible with HTML files:
+Additionally, you might want to add the following option to the other objects (`{}`) in `export default []` (at the same level like the `files` key above), since other rules might be incompatible with HTML files:
 
 ```js
 ignores: ["**/*.html**"],
