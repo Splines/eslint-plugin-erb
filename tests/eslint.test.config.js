@@ -40,10 +40,17 @@ module.exports = [
   },
   {
     // HTML linting (aside from erb_lint)
+    files: ["**/*.html", "**/*.html.erb"],
     processor: plugin.processors["processorHtml"],
     ...html.configs["flat/recommended"],
-    files: ["**/*.html", "**/*.html.erb"],
+    plugins: {
+      "@html-eslint": html,
+      "@stylistic": stylistic,
+    },
     rules: {
+      "@stylistic/eol-last": ["error", "always"],
+      "@stylistic/no-trailing-spaces": "error",
+      "@stylistic/no-multiple-empty-lines": ["error", { max: 1, maxEOF: 0 }],
       ...html.configs["flat/recommended"].rules,
       // 🎈 Best Practices
       "@html-eslint/no-extra-spacing-text": "error",
