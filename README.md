@@ -44,28 +44,6 @@ export default [
 ];
 ```
 
-If you also want to lint **HTML code** in `.html.erb` files, you can use our preprocessor in conjunction with the amazing [`html-eslint`](https://html-eslint.org/) plugin. Install it, then add the following section to your ESLint config `export default []` array:
-
-```js
-// eslint.config.js
-{
-  processor: erb.processors["processorHtml"],
-  ...html.configs["flat/recommended"],
-  files: ["**/*.html", "**/*.html.erb"],
-  rules: {
-      ...html.configs["flat/recommended"].rules,
-      "@html-eslint/indent": ["error", 2],
-      // other rules...
-  },
-}
-```
-
-Additionally, you might want to add the following option to the other objects (`{}`) in `export default []`, since other rules might be incompatible with HTML files:
-
-```js
-ignores: ["**/*.html**"],
-```
-
 <details>
 <summary>See more complete example</summary>
 
@@ -197,6 +175,33 @@ module.exports = {
 ```
 
 </details>
+
+If you also want to lint **HTML code** in `.html.erb` files, you can use our preprocessor in conjunction with the amazing [`html-eslint`](https://html-eslint.org/) plugin. Install `html-eslint`, then add the following to your ESLint config file (flat config format):
+
+```js
+// eslint.config.js
+import erb from "eslint-plugin-erb";
+
+export default [
+  // your other configurations...
+  {
+    processor: erb.processors["processorHtml"],
+    ...html.configs["flat/recommended"],
+    files: ["**/*.html", "**/*.html.erb"],
+    rules: {
+        ...html.configs["flat/recommended"].rules,
+        "@html-eslint/indent": ["error", 2],
+        // other rules...
+    },
+  }
+];
+```
+
+Additionally, you might want to add the following option to the other objects (`{}`) in `export default []`, since other rules might be incompatible with HTML files:
+
+```js
+ignores: ["**/*.html**"],
+```
 
 ## Editor Integrations
 
