@@ -8,6 +8,12 @@ Also see [this answer](https://stackoverflow.com/a/28392481/9655481). Basically,
 npm link /path/to/eslint-plugin-erb
 ```
 
+Other useful commands:
+
+```bash
+npm ls --global
+```
+
 ## Merge strategies
 
 - Feature branches to `dev`: squash commit
