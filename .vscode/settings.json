@@ -2,8 +2,6 @@
     //////////////////////////////////////
     // JS (ESLint)
     //////////////////////////////////////
-    "eslint.format.enable": true,
-    "eslint.experimental.useFlatConfig": true,
     "[javascript]": {
         "editor.formatOnSave": false, // to avoid formatting twice (ESLint + VSCode)
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
@@ -11,8 +9,15 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit"
     },
-    // this disables VSCode built-int formatter (instead we want to use ESLint)
+    "eslint.format.enable": true,
+    // this disables VSCode built-in formatter (instead we want to use ESLint)
     "javascript.validate.enable": false,
+    "eslint.options": {
+        "overrideConfigFile": "./eslint.config.js"
+    },
+    "eslint.validate": [
+        "javascript"
+    ],
     //////////////////////////////////////
     // Git
     //////////////////////////////////////
