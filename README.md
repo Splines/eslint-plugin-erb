@@ -28,9 +28,6 @@ Starting of v9 ESLint provides a [new flat config format](https://eslint.org/doc
 import erb from "eslint-plugin-erb";
 
 export default [
-  // if you are using VSCode, don't forget to put
-  // "eslint.experimental.useFlatConfig": true
-  // in your settings.json
   erb.configs.recommended,
   {
     linterOptions: {
@@ -151,12 +148,9 @@ With this variant you have a bit more control over what is going on, e.g. you co
 import erb from "eslint-plugin-erb";
 
 export default [
-  // if you are using VSCode, don't forget to put
-  // "eslint.experimental.useFlatConfig": true
-  // in your settings.json
   {
     files: ["**/*.js.erb"],
-    processor: erb.processors.erbProcessor,
+    processor: erb.processors.processorJs,
   },
   {
     linterOptions: {
@@ -187,7 +181,7 @@ module.exports = {
 };
 ```
 
-Or you can configure the processor manually (advanced):
+Or you can configure the processor manually:
 
 ```js
 // .eslintrc.js
@@ -196,7 +190,7 @@ module.exports = {
     overrides: [
         {
             files: ["**/*.js.erb"],
-            processor: "erb/erbProcessor"
+            processor: "erb/processorJs"
         }
     ]
 };
@@ -219,7 +213,6 @@ If you're using VSCode, you may find this `settings.json` options useful:
     // https://eslint.style/guide/faq#how-to-auto-format-on-save
     // https://github.com/microsoft/vscode-eslint#settings-options
     "eslint.format.enable": true,
-    "eslint.experimental.useFlatConfig": true, // use the new flat config format
     "[javascript]": {
         "editor.formatOnSave": false, // to avoid formatting twice (ESLint + VSCode)
         "editor.defaultFormatter": "dbaeumer.vscode-eslint" // use ESLint plugin
