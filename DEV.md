@@ -14,6 +14,12 @@ Other useful commands:
 npm ls --global
 ```
 
+Finally to remove the link:
+
+```bash
+npm unlink eslint-plugin-erb
+```
+
 ## Merge strategies
 
 - Feature branches to `dev`: squash commit
