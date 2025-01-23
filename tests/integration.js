@@ -1,5 +1,5 @@
 const fs = require("fs");
-const assert = require("chai").assert;
+const expect = require("chai").expect;
 const { ESLint } = require("eslint");
 
 const eslint = new ESLint({
@@ -11,7 +11,7 @@ async function runTest(filename, expectedFilename) {
   const testCode = fs.readFileSync(filename, "utf-8");
   const result = await eslint.lintText(testCode, { filePath: filename });
   const expectedCode = fs.readFileSync(expectedFilename, "utf-8");
-  assert.strictEqual(result[0].output, expectedCode);
+  expect(result[0].output).to.equal(expectedCode);
 }
 
 describe("Integration tests (JS)", () => {
@@ -22,6 +22,7 @@ describe("Integration tests (JS)", () => {
     "multiple-erb-in-one-line",
     "one-liner",
     "multiple-properties",
+    "no-output-erb-tag",
   ];
   mapFiles.forEach((name) => {
     it(`performs linting as we expect it on ${name}.js`, async () => {
