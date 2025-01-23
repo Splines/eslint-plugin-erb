@@ -26,5 +26,30 @@
     "git.inputValidationLength": 72,
     "cSpell.words": [
         "lintable"
-    ]
+    ],
+    //////////////////////////////////////
+    // Editor
+    //////////////////////////////////////
+    "editor.indentSize": 2,
+    "editor.tabSize": 2,
+    "[html,js]": {
+        "editor.indentSize": 4,
+        "editor.tabSize": 4
+    },
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.renderFinalNewline": "on",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 100, // toggle via Alt + Z shortcut
+    "editor.mouseWheelZoom": true,
+    "editor.rulers": [
+        {
+            "column": 80, // soft limit
+            "color": "#e5e5e5"
+        },
+        {
+            "column": 100, // hard limit
+            "color": "#c9c9c9"
+        }
+    ],
 }
