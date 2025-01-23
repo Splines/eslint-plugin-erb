@@ -1,4 +1,4 @@
-# Some developer guidelines
+# Developer guidelines
 
 ## Install as npm package locally to test
 
@@ -22,9 +22,10 @@ npm unlink eslint-plugin-erb
 
 ## Merge strategies
 
-- Feature branches to `dev`: squash commit
-- Continuous Release from `dev` to `main`: standard merge commit
-- Hotfixes: branch off `main`, merge PR into `main` via squash commit, then merge back `main` to `dev` via standard merge commit.
+We develop directly on `main`. Whenever a release is ready, we create a new release tag and publish to npm.
+
+- Main branch: protected, only PRs allowed (tests must pass). Use squash commits (!)
+- Finally: continuous release by creating a `release/*` branch and merging it into `main` via a PR.
 
 ## Create a new release (and publish to npm)
 
@@ -38,7 +39,7 @@ npm run bump-version -- [<newversion> | major | minor | patch]
 ```
 
 - ⚠ Copy the version specifier from `package.json` into the `index.js` meta information object.
-- Once the `dev` branch is ready, open a PR (Pull request) called "Continuous Release <version.number>" and give it the "release" label. Merge this PR into `main`.
+- Call the respective PR for the final changes "Continuous Release <version.number>". Merge this PR into `main`.
 - Create a new release via the GitHub UI and assign a new tag alongside that.
 - Fetch the tag locally (`git fetch`) and publish to npm via `npm run publish-final`. You probably have to login to npm first (`npm login`).
-- Enjoy ✌ Check that the release is available [here on npm](https://www.npmjs.com/package/eslint-plugin-erb).
+- Check that the release is available [here on npm](https://www.npmjs.com/package/eslint-plugin-erb). Enjoy ✌

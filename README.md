@@ -6,9 +6,6 @@ A zero-dependency plugin for [ESLint](https://eslint.org/).
 
 ![showcase-erb-lint-gif](https://github.com/Splines/eslint-plugin-erb/assets/37160523/623d6007-b4f5-41ce-be76-5bc0208ed636?raw=true)
 
-> **Warning**
-> v2.0.0 is breaking. We use the new ESLint flat config format. Use `erb:recommended-legacy` if you want to keep using the old `.eslintrc.js` format.
-
 ## Usage
 
 ### Install
@@ -150,7 +147,7 @@ export default [
 <details>
 <summary>Legacy: you can still use the old `.eslintrc.js` format</summary>
 
-You can extend the `plugin:erb/recommended-legacy` config that will enable the ERB processor on all `.js.erb` files. **Note that instead of "plugin:erb/recommended", you now have to use "plugin:erb/recommended-legacy"**.
+You can extend the `plugin:erb/recommended-legacy` config that will enable the ERB processor on all `.js.erb` files.
 
 ```js
 // .eslintrc.js
@@ -175,6 +172,8 @@ module.exports = {
 ```
 
 </details>
+
+<br>
 
 If you also want to lint **HTML code** in `.html.erb` files, you can use our preprocessor in conjunction with the amazing [`html-eslint`](https://html-eslint.org/) plugin. Install `html-eslint`, then add the following to your ESLint config file (flat config format):
 
@@ -230,9 +229,6 @@ If you're using VSCode, you may find this `settings.json` options useful:
     //////////////////////////////////////
     // Files
     //////////////////////////////////////
-    "files.exclude": {
-        "node_modules/": false,
-    },
     "files.associations": {
         "*.js.erb": "javascript"
     },
@@ -258,4 +254,4 @@ console.log("You are lucky 🍀");
 <% end %>
 ```
 
-- No support for ESLint suggestions (but full support for Autofixes as shown in the GIF above)
+- No support for ESLint _suggestions_ (but full support for _autofixes_ as shown in the GIF above)
