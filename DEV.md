@@ -1,4 +1,4 @@
-# Some developer guidelines
+# Developer guidelines
 
 ## Install as npm package locally to test
 
@@ -22,9 +22,10 @@ npm unlink eslint-plugin-erb
 
 ## Merge strategies
 
-- Feature branches to `dev`: squash commit
-- Continuous Release from `dev` to `main`: standard merge commit
-- Hotfixes: branch off `main`, merge PR into `main` via squash commit, then merge back `main` to `dev` via standard merge commit.
+We develop directly on `main`. Whenever a release is ready, we create a new release tag and publish to npm.
+
+- Main branch: protected, only PRs allowed (tests must pass). Use squash commits (!)
+- Finally: continuous release by creating a `release/*` branch and merging it into `main` via a PR.
 
 ## Create a new release (and publish to npm)
 
