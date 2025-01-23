@@ -39,7 +39,7 @@ npm run bump-version -- [<newversion> | major | minor | patch]
 ```
 
 - ⚠ Copy the version specifier from `package.json` into the `index.js` meta information object.
-- Once the `dev` branch is ready, open a PR (Pull request) called "Continuous Release <version.number>" and give it the "release" label. Merge this PR into `main`.
+- Call the respective PR for the final changes "Continuous Release <version.number>". Merge this PR into `main`.
 - Create a new release via the GitHub UI and assign a new tag alongside that.
 - Fetch the tag locally (`git fetch`) and publish to npm via `npm run publish-final`. You probably have to login to npm first (`npm login`).
-- Enjoy ✌ Check that the release is available [here on npm](https://www.npmjs.com/package/eslint-plugin-erb).
+- Check that the release is available [here on npm](https://www.npmjs.com/package/eslint-plugin-erb). Enjoy ✌
