@@ -37,6 +37,10 @@ module.exports = [
       },
     },
     ignores: ["**/*.html**"],
+    linterOptions: {
+      // see https://github.com/Splines/eslint-plugin-erb/releases/tag/v2.0.1
+      reportUnusedDisableDirectives: "off",
+    },
   },
   {
     // HTML linting (aside from erb_lint)
@@ -77,6 +81,10 @@ module.exports = [
         disallowTabs: true,
         disallowInAssignment: true,
       }],
+    },
+    linterOptions: {
+      // see https://github.com/Splines/eslint-plugin-erb/releases/tag/v2.0.1
+      reportUnusedDisableDirectives: "off",
     },
   },
 ];
