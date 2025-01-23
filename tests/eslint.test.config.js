@@ -9,7 +9,7 @@ const customizedStylistic = stylistic.configs.customize({
   "indent": 2,
   "jsx": false,
   "quote-props": "always",
-  "semi": "always",
+  "semi": true,
   "brace-style": "1tbs",
 });
 
